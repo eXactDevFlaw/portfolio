@@ -1,0 +1,18 @@
+@import url('./styles/header.css');
+@import url('./styles/first.section.css');
+@import url('./styles/second.section.css');
+@import url('./styles/third.section.css');
+@import url('./styles/footer.css');
+
+:root {
+    --main-color: grey;
+    --second-color: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
