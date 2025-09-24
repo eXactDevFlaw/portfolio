@@ -1,18 +1,51 @@
-@import url('./styles/header.css');
-@import url('./styles/first.section.css');
-@import url('./styles/second.section.css');
-@import url('./styles/third.section.css');
-@import url('./styles/footer.css');
+@import url("./styles/fonts.css");
+@import url("./styles/header.css");
+@import url("./styles/section.about.css");
+@import url("./styles/section.contact.css");
+@import url("./styles/section.hero.css");
+@import url("./styles/section.projects.css");
+@import url("./styles/section.skills.css");
+@import url("./styles/footer.css");
 
 :root {
-    --main-color: grey;
-    --second-color: blue;
+  --main-color: #060606;
+  --second-color: rgb(3, 3, 5);
+  --main-font-color: white;
+  --box-shadow-color: 2px 2px 5px rgb(59, 59, 59);
+  --max-width: 1200px;
+  --header-height: 100px;
+  --main-font-style: "Dyna Puff", sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  background: var(--main-color);
+  color: var(--main-font-color);
+  font-family: var(--main-font-style);
+}
 
+header {
+  display: block;
+  background-color: var(--second-color);
+}
+
+main {
+  display: block;
+}
+
+footer {
+  display: block;
+  background: var(--second-color);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0px auto;
+  padding: 0 20px;
+}
