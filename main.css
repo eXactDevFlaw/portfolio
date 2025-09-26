@@ -8,10 +8,10 @@
 @import url("./styles/footer.css");
 
 :root {
-  --main-color: #060606;
-  --second-color: rgb(3, 3, 5);
+  --main-color: #353434;
+  --second-color: #0a0a0a;
   --main-font-color: white;
-  --box-shadow-color: 2px 2px 5px rgb(59, 59, 59);
+  --box-shadow: 2px 2px 5px rgb(145, 141, 141);
   --max-width: 1200px;
   --header-height: 100px;
   --main-font-style: "Dyna Puff", sans-serif;
@@ -21,6 +21,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-color) var(--second-color);
 }
 
 body {
@@ -32,6 +34,10 @@ body {
 header {
   display: block;
   background-color: var(--second-color);
+  width: 100%;
+  height: var(--header-height);
+  box-shadow: var(--box-shadow);
+  border-bottom: 1px solid rgba(15, 223, 255, 0.2);
 }
 
 main {
@@ -41,6 +47,11 @@ main {
 footer {
   display: block;
   background: var(--second-color);
+}
+
+section {
+  padding: 100px 0;
+  position: relative;
 }
 
 .container {
