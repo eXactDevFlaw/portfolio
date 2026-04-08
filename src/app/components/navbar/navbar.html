@@ -1,14 +1,10 @@
 <nav class="navbar">
   <div class="nav-inner">
-
     <!-- Logo -->
     <a class="logo">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <path d="M6 10 L14 18 L6 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M30 10 L22 18 L30 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <img src="img/logo.svg" alt="" />
       <div class="logo-text">
-        <span class="logo-name">C.Fohrer</span>
+        <span class="logo-name">Lutz Bölling</span>
         <span class="logo-sub">developer</span>
       </div>
     </a>
@@ -16,7 +12,9 @@
     <!-- Desktop nav links -->
     <ul class="nav-links">
       @for (link of navLinks; track link) {
-        <li><button (click)="scrollTo(link)">{{ link }}</button></li>
+        <li>
+          <button (click)="scrollTo(link)">{{ link }}</button>
+        </li>
       }
     </ul>
 
@@ -32,7 +30,6 @@
         <span [class.open]="mobileOpen()"></span>
       </button>
     </div>
-
   </div>
 </nav>
 
@@ -41,7 +38,9 @@
   <div class="mobile-bubble" (click)="$event.stopPropagation()">
     <ul>
       @for (link of navLinks; track link) {
-        <li><button (click)="scrollTo(link)">{{ link }}</button></li>
+        <li>
+          <button (click)="scrollTo(link)">{{ link }}</button>
+        </li>
       }
       <li class="lang-row">
         <button [class.active]="lang() === 'DE'" (click)="setLang('DE')">DE</button>

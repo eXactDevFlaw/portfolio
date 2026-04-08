@@ -1,0 +1,142 @@
+.hero {
+  position: relative;
+  min-height: 540px;
+  background: var(--bg-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem 2rem;
+  overflow: hidden;
+}
+
+.social-icons {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  img.default {
+    display: block;
+  }
+  img.hover {
+    display: none;
+  }
+
+  a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color var(--transition);
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      border-color: var(--accent);
+      img.default {
+        display: none;
+      }
+      img.hover {
+        display: block;
+      }
+    }
+  }
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+
+.photo-circle {
+  width: 340px;
+  height: 380px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: var(--nav-bg);
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media (max-width: 768px) {
+    width: 220px;
+    height: 240px;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+}
+
+.scroll-btn {
+  margin-top: 1.5rem;
+  width: 50px;
+  height: 76px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+
+  img {
+    width: 40px;
+    height: 90px;
+  }
+
+  &:hover {
+    background: rgba(126, 200, 227, 0.1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
