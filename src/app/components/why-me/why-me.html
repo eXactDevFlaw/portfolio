@@ -1,0 +1,26 @@
+<section class="why-me" id="why-me">
+  <h2 class="section-title">Why me</h2>
+
+  <div class="why-me-content">
+    <!-- Left: rotating stats with typing effect -->
+    <div class="stats-block">
+      <div class="stat-row">
+        <img class="stat-icon" [src]="currentItem.iconSrc" alt="" />
+        <p class="typewriter">
+          <span class="highlight">I am </span>{{ displayedText() }}<span class="cursor">|</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: description + CTA -->
+    <div class="description-block">
+      <p class="description">
+        Why are you passionate about coding?<br />
+        Replace this with your own text about your key traits —
+        analytical thinking, creativity, persistence, and collaboration.
+        A problem-solving mindset is always nice to have.
+      </p>
+      <button class="btn" (click)="scrollToContact()">Let's talk</button>
+    </div>
+  </div>
+</section>
