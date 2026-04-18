@@ -1,12 +1,12 @@
 .hero {
   position: relative;
-  min-height: 540px;
+  min-height: 480px;
   background: var(--bg-darker);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 4rem 2rem 2rem;
-  overflow: hidden;
+  padding: 2rem 2rem 0;
+  overflow: visible;
 }
 
 .social-icons {
@@ -50,37 +50,55 @@
 
 .hero-content {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 4rem;
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    gap: 1rem;
     text-align: center;
   }
 }
 
-.photo-circle {
+.photo-wrapper {
+  position: relative;
   width: 340px;
-  height: 380px;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background: var(--nav-bg);
-  overflow: hidden;
+  height: 500px;
   flex-shrink: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
-  }
 
   @media (max-width: 768px) {
     width: 220px;
-    height: 240px;
+    height: 320px;
   }
+}
+
+.photo-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 360px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: var(--nav-bg);
+
+  @media (max-width: 768px) {
+    height: 230px;
+  }
+}
+
+.photo-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .hero-text {
@@ -88,9 +106,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  padding-bottom: 4rem;
 
   @media (max-width: 768px) {
     align-items: center;
+    padding-bottom: 2rem;
   }
 
   h1 {
