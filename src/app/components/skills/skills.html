@@ -1,0 +1,27 @@
+<section class="skills" id="skills">
+  <h2 class="section-title">My Skills</h2>
+
+  <div class="skills-wrapper">
+    <!-- Skill grid: @for loopt durch das skills-Array aus skills.ts -->
+    <div class="skills-grid">
+      @for (skill of skills; track skill.name) {
+        <div class="skill-item">
+          <img [src]="skill.img" [alt]="skill.name" />
+        </div>
+      }
+    </div>
+
+    <!-- "Currently learning" Bubble -->
+    <div class="learning-bubble">
+      <p class="learning-title">I am currently learning</p>
+      <div class="learning-tags">
+        <span>React</span>
+        <span>Vue.js</span>
+      </div>
+      <p class="learning-desc">
+        Show that you are motivated to continually improve your skills,
+        implement innovative solutions and stay abreast of new technologies.
+      </p>
+    </div>
+  </div>
+</section>

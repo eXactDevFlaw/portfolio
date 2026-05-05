@@ -1,0 +1,161 @@
+.projects {
+  padding: 5rem 2rem;
+  background: var(--bg-dark);
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  margin-right: -1px; /* verhindert doppelte Borders zwischen Tabs */
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  position: relative;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.active {
+    background: var(--bg-card);
+    color: var(--accent);
+    z-index: 1; /* aktiver Tab liegt über den Borders der Nachbarn */
+  }
+
+  &:hover:not(.active) {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+}
+
+/* Main content layout */
+.project-content {
+  display: flex;
+  gap: 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+/* Left: info blocks */
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-block {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Blue dot like in Figma */
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.info-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.duration {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.info-text {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.project-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Right: visual */
+.project-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  width: 280px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.tech-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tech-icon {
+  width: 44px;
+  height: 66px;
+  object-fit: contain;
+}
+
+.project-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* Placeholder bis echte Screenshots da sind */
+.screenshot-placeholder {
+  flex: 1;
+  min-height: 180px;
+  background: var(--bg-darker);
+  border-radius: var(--radius-card);
+  border: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

@@ -1,0 +1,65 @@
+<section class="projects" id="projects">
+  <h2 class="section-title">My Projects</h2>
+
+  <!-- Tab Navigation -->
+  <div class="tabs">
+    @for (project of projects; track project.tab; let i = $index) {
+      <button
+        class="tab"
+        [class.active]="activeIndex() === i"
+        (click)="select(i)">
+        {{ i + 1 }}. {{ project.tab }}
+      </button>
+    }
+  </div>
+
+  <!-- Project Content -->
+  <div class="project-content">
+
+    <!-- Left: Text blocks -->
+    <div class="project-info">
+      <div class="info-block">
+        <div class="dot"></div>
+        <div>
+          <p class="info-title">About the project <span class="duration">Duration: {{ active.duration }}</span></p>
+          <p class="info-text">{{ active.about }}</p>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="dot"></div>
+        <div>
+          <p class="info-title">How I have organised my work process</p>
+          <p class="info-text">{{ active.workProcess }}</p>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="dot"></div>
+        <div>
+          <p class="info-title">My group work experience</p>
+          <p class="info-text">{{ active.groupExperience }}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Technologies + Screenshot + Buttons -->
+    <div class="project-visual">
+      <p class="tech-label">Technologies</p>
+      <div class="tech-icons">
+        @for (tech of active.technologies; track tech.name) {
+          <img [src]="tech.img" [alt]="tech.name" class="tech-icon" />
+        }
+      </div>
+      <div class="screenshot-placeholder">
+        <span>Screenshot</span>
+      </div>
+      <div class="project-btns">
+        <a [href]="active.liveUrl" target="_blank" class="btn">Live Test</a>
+        <a [href]="active.githubUrl" target="_blank" class="btn">GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</section>
