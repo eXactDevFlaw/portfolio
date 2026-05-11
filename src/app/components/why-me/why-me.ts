@@ -1,12 +1,17 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 
+/** A single rotating stat entry shown in the Why Me section. */
 interface StatItem {
+  /** The text typed after "I am " (e.g. "located in Bremen."). */
   suffix: string;
+  /** Path to the icon image displayed left of the text. */
   iconSrc: string;
 }
 
+/** Controls the typewriter animation state machine. */
 type Phase = 'typing' | 'waiting' | 'deleting' | 'switching';
 
+/** Why Me section with a looping typewriter animation cycling through personal stats. */
 @Component({
   selector: 'app-why-me',
   standalone: true,
@@ -14,13 +19,19 @@ type Phase = 'typing' | 'waiting' | 'deleting' | 'switching';
   styleUrl: './why-me.scss'
 })
 export class WhyMeComponent implements OnInit, OnDestroy {
+  /** All stat items that cycle through the typewriter animation. */
   readonly items: StatItem[] = [
     { suffix: 'located in Bremen.',    iconSrc: 'img/icon-location.png' },
     { suffix: 'open to work remote.',  iconSrc: 'img/icon-remote.png'   },
   ];
 
+  /** Index of the currently displayed stat item. */
   currentIndex = signal(0);
+
+  /** The portion of the current suffix that has been typed so far. */
   displayedText = signal('');
+
+  /** Current phase of the typewriter state machine. */
   phase = signal<Phase>('typing');
 
   private charIndex = 0;
@@ -34,10 +45,18 @@ export class WhyMeComponent implements OnInit, OnDestroy {
     if (this.timer) clearTimeout(this.timer);
   }
 
+  /** Returns the currently active stat item. */
   get currentItem(): StatItem {
     return this.items[this.currentIndex()];
   }
 
+  /**
+   * Drives the typewriter state machine.
+   * - typing: adds one character at a time
+   * - waiting: pauses at the end of the full text
+   * - deleting: removes one character at a time
+   * - switching: advances to the next item and restarts
+   */
   private tick() {
     const item = this.currentItem;
 
@@ -79,6 +98,7 @@ export class WhyMeComponent implements OnInit, OnDestroy {
     }
   }
 
+  /** Smoothly scrolls to the Contact section. */
   scrollToContact() {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   }

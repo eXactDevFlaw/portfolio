@@ -1,6 +1,5 @@
 <nav class="navbar">
   <div class="nav-inner">
-    <!-- Logo -->
     <a class="logo">
       <img src="img/logo.svg" alt="" />
       <div class="logo-text">
@@ -9,7 +8,6 @@
       </div>
     </a>
 
-    <!-- Desktop nav links -->
     <ul class="nav-links">
       @for (link of navLinks; track link) {
         <li>
@@ -18,7 +16,6 @@
       }
     </ul>
 
-    <!-- Language toggle + burger -->
     <div class="nav-right">
       <div class="lang-toggle">
         <button [class.active]="lang() === 'DE'" (click)="setLang('DE')">DE</button>
@@ -33,7 +30,6 @@
   </div>
 </nav>
 
-<!-- Mobile overlay -->
 <div class="mobile-overlay" [class.visible]="mobileOpen()" (click)="closeMobile()">
   <div class="mobile-bubble" (click)="$event.stopPropagation()">
     <ul>
