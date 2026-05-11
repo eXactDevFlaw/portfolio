@@ -84,9 +84,20 @@
   height: 360px;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   background: var(--nav-bg);
+  border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+  animation: blob-rotate 8s linear infinite;
 
   @media (max-width: 768px) {
     height: 230px;
+  }
+}
+
+@keyframes blob-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
