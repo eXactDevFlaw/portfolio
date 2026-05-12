@@ -52,9 +52,21 @@
           <img [src]="tech.img" [alt]="tech.name" class="tech-icon" />
         }
       </div>
-      <div class="screenshot-placeholder">
-        <span>Screenshot</span>
-      </div>
+      @if (active.screenshot) {
+        <div class="browser-mockup">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <div class="browser-url"></div>
+          </div>
+          <img [src]="active.screenshot" [alt]="active.tab + ' screenshot'" class="browser-screen" />
+        </div>
+      } @else {
+        <div class="screenshot-placeholder">
+          <span>Screenshot coming soon</span>
+        </div>
+      }
       <div class="project-btns">
         <a [href]="active.liveUrl" target="_blank" class="btn">Live Test</a>
         <a [href]="active.githubUrl" target="_blank" class="btn">GitHub</a>

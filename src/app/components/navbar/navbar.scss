@@ -22,6 +22,11 @@
   flex-shrink: 0;
   cursor: pointer;
 
+  img {
+    height: 50px;
+    width: auto;
+  }
+
   .logo-text {
     display: flex;
     flex-direction: column;

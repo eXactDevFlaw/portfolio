@@ -9,6 +9,7 @@ interface Project {
   technologies: { name: string; img: string }[];
   liveUrl: string;
   githubUrl: string;
+  screenshot?: string;
 }
 
 @Component({
@@ -35,18 +36,19 @@ export class ProjectsComponent {
       githubUrl: '#',
     },
     {
-      tab: 'Sharkie',
-      duration: '2 weeks',
-      about: 'Placeholder description for Sharkie. Describe what this project does and what problem it solves.',
+      tab: 'Pollo Loco',
+      duration: '6 weeks',
+      about: 'Placeholder description for Pollo Loco. Describe what this project does and what problem it solves.',
       workProcess: 'How did you organise your work on this project? What patterns or principles did you follow?',
-      groupExperience: 'Describe the team structure and your specific role in the Sharkie project.',
+      groupExperience: 'Describe the team structure and your specific role in the Pollo Loco project.',
       technologies: [
         { name: 'JavaScript', img: 'img/skill-javascript.png' },
         { name: 'HTML', img: 'img/skill-html.png' },
         { name: 'CSS', img: 'img/skill-css.png' },
       ],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://pollo-loco.lutz-boelling.de',
+      githubUrl: 'https://github.com/eXactDevFlaw/el-pollo-loco',
+      screenshot: 'img/project-pollo-loco.png',
     },
     {
       tab: 'Join',
@@ -59,8 +61,9 @@ export class ProjectsComponent {
         { name: 'HTML', img: 'img/skill-html.png' },
         { name: 'CSS', img: 'img/skill-css.png' },
       ],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://join.lutz-boelling.de',
+      githubUrl: 'https://github.com/eXactDevFlaw/join-frontend',
+      screenshot: 'img/project-join.png',
     },
     {
       tab: 'Ongoing Project',

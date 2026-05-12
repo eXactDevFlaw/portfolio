@@ -1,19 +1,15 @@
 <section class="contact" id="contact">
 
-  <!-- Titel + Scroll-up -->
   <div class="contact-header">
     <h2 class="section-title">Contact me</h2>
     <div class="scroll-top" (click)="scrollToTop()" aria-label="Scroll to top">
-      <!-- arrow-down.svg um 180° gedreht = Pfeil nach oben -->
-      <img src="img/arrow-down.svg" alt="scroll to top" />
+      <img src="img/arrow-up.svg" alt="scroll to top" />
     </div>
   </div>
 
-  <!-- Zwei Spalten: Info links, Formular rechts -->
-  <div class="contact-content">
+  <div class="contact-body">
 
-    <!-- Links: Beschreibung + Kontaktdaten -->
-    <div class="contact-info">
+    <div class="contact-info-row">
       <p class="contact-desc">
         Feel free to get in touch with job offers or opportunities such as
         Frontend Developer or Angular Developer roles.
@@ -21,42 +17,43 @@
       <div class="contact-details">
         <div class="contact-item">
           <img src="img/icon-mail.svg" alt="Email" class="contact-icon" />
-          <span>lutzboelling&#64;gmx.de</span>
+          <span>E-mail: lutzboelling&#64;gmx.de</span>
         </div>
         <div class="contact-item">
           <span class="phone-icon">📞</span>
-          <span>+49 157 123 456 68</span>
+          <span>Tel: +49 157 123 456 68</span>
         </div>
       </div>
     </div>
 
-    <!-- Rechts: Formular -->
-    <div class="contact-form-wrap">
-      <p class="form-title">Let us work together!</p>
-      <form class="contact-form" (ngSubmit)="send()">
+    <form class="contact-form" (ngSubmit)="send()">
 
-        <!-- Name + Email nebeneinander -->
-        <div class="form-row">
-          <input type="text" placeholder="Your name"
-            [(ngModel)]="name" name="name" required />
-          <input type="email" placeholder="Your Email"
-            [(ngModel)]="email" name="email" required />
+      <div class="form-row">
+        <div class="form-field">
+          <label>Your name</label>
+          <input type="text" [(ngModel)]="name" name="name" required />
         </div>
-
-        <textarea placeholder="Your message"
-          [(ngModel)]="message" name="message" rows="5" required></textarea>
-
-        <label class="privacy-label">
-          <input type="checkbox" [(ngModel)]="privacyAccepted" name="privacy" />
-          I've read the <a href="#" class="privacy-link">privacy policy</a> and agree to the processing of my data as outlined.
-        </label>
-
-        <div class="form-footer">
-          <button type="submit" class="btn" [disabled]="!privacyAccepted">Send</button>
+        <div class="form-field">
+          <label>Your Email</label>
+          <input type="email" [(ngModel)]="email" name="email" required />
         </div>
+      </div>
 
-      </form>
-    </div>
+      <div class="form-field">
+        <label>Your Message</label>
+        <textarea [(ngModel)]="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <label class="privacy-label">
+        <input type="checkbox" [(ngModel)]="privacyAccepted" name="privacy" />
+        I've read the <a href="#" class="privacy-link">privacy policy</a> and agree to the processing of my data as outlined.
+      </label>
+
+      <div class="form-footer">
+        <button type="submit" class="btn-send" [disabled]="!privacyAccepted">Send</button>
+      </div>
+
+    </form>
 
   </div>
 </section>

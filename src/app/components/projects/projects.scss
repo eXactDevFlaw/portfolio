@@ -146,7 +146,6 @@
   justify-content: flex-end;
 }
 
-/* Placeholder bis echte Screenshots da sind */
 .screenshot-placeholder {
   flex: 1;
   min-height: 180px;
@@ -158,4 +157,47 @@
   justify-content: center;
   color: var(--text-muted);
   font-size: 0.85rem;
+}
+
+.browser-mockup {
+  flex: 1;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--bg-darker);
+  border-bottom: 1px solid var(--border);
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+
+  &:nth-child(1) { background: #ff5f57; }
+  &:nth-child(2) { background: #febc2e; }
+  &:nth-child(3) { background: #28c840; }
+}
+
+.browser-url {
+  flex: 1;
+  height: 18px;
+  background: var(--bg-dark);
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.browser-screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
