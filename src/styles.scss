@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600;700&display=swap');
 
 :root {
-  --bg-dark:      #262E34;
-  --bg-darker:    #1c2228;
-  --bg-card:      #2d3840;
-  --nav-bg:       #6CA6C7;
-  --accent:       #6CA6C7;
-  --accent-dim:   #5a90b0;
-  --text-primary: #F8F5EC;
-  --text-muted:   rgba(248, 245, 236, 0.6);
-  --border:       rgba(248, 245, 236, 0.12);
+  --background:      #272e34;
+  --primary-color:   #97bad9;
+  --secondary-color: #f7f5ec;
+  --inactive:        #bfc1c3;
+  --error:           #d05a3a;
+  --done:            #a5de5d;
   --font-display: 'Orbitron', monospace;
   --font-body:   'Exo 2', sans-serif;
   --radius-card: 16px;
@@ -26,8 +23,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-dark);
-  color: var(--text-primary);
+  background: var(--background);
+  color: var(--secondary-color);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -37,7 +34,7 @@ a { color: inherit; text-decoration: none; }
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.8rem);
-  color: var(--accent);
+  color: var(--primary-color);
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -48,16 +45,16 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   padding: 0.55rem 1.6rem;
   border-radius: 999px;
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid var(--primary-color);
   background: transparent;
-  color: var(--text-primary);
+  color: var(--secondary-color);
   font-family: var(--font-body);
   font-size: 0.9rem;
   cursor: pointer;
   transition: background var(--transition), color var(--transition);
 
   &:hover {
-    background: var(--accent);
-    color: var(--bg-dark);
+    background: var(--primary-color);
+    color: var(--background);
   }
 }

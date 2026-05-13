@@ -1,5 +1,5 @@
 .footer {
-  background: var(--nav-bg);
+  background: var(--primary-color);
   padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
@@ -17,13 +17,13 @@
   flex-direction: column;
   gap: 0.2rem;
   font-size: 0.85rem;
-  color: var(--bg-darker);
+  color: var(--background);
 }
 
 .legal-link {
-  color: var(--bg-darker);
+  color: var(--background);
   text-decoration: underline;
-  &:hover { color: var(--bg-dark); }
+  &:hover { color: var(--background); }
 }
 
 .footer-logo {

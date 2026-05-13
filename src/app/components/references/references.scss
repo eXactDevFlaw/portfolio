@@ -1,6 +1,6 @@
 .references {
   padding: 3rem 2rem;
-  background: var(--bg-dark);
+  background: var(--background);
   overflow: hidden; /* Kreise bluten oben/unten raus */
 }
 
@@ -19,7 +19,7 @@
 }
 
 .card {
-  background: var(--bg-card);
+  background: var(--background);
   border-radius: 50%;
   width: 520px;
   height: 520px;
@@ -49,22 +49,22 @@
 .ref-name {
   font-weight: 700;
   font-size: 1rem;
-  color: var(--text-primary);
+  color: var(--secondary-color);
 }
 
 .ref-project {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--inactive);
   margin-bottom: 0.4rem;
 }
 
 .accent {
-  color: var(--accent);
+  color: var(--primary-color);
 }
 
 .ref-quote {
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: var(--inactive);
   line-height: 1.6;
   font-style: italic;
 }
@@ -72,11 +72,11 @@
 .ref-link {
   margin-top: 0.5rem;
   font-size: 0.78rem;
-  color: var(--accent);
+  color: var(--primary-color);
   text-decoration: underline;
   cursor: pointer;
 
   &:hover {
-    color: var(--text-primary);
+    color: var(--secondary-color);
   }
 }

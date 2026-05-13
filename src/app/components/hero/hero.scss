@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   min-height: 480px;
-  background: var(--bg-dark);
+  background: var(--background);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -37,7 +37,7 @@
     }
 
     &:hover {
-      border-color: var(--accent);
+      border-color: var(--primary-color);
       img.default {
         display: none;
       }
@@ -83,7 +83,7 @@
   right: 0;
   height: 360px;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background: var(--nav-bg);
+  background: var(--primary-color);
   border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
   animation: blob-rotate 8s linear infinite;
 
@@ -128,7 +128,7 @@
     font-family: var(--font-display);
     font-size: clamp(2.2rem, 5vw, 3.8rem);
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--secondary-color);
     line-height: 1.1;
   }
 
@@ -136,7 +136,7 @@
     font-size: clamp(0.85rem, 2vw, 1rem);
     font-weight: 600;
     letter-spacing: 0.18em;
-    color: var(--text-muted);
+    color: var(--inactive);
     text-transform: uppercase;
   }
 }
@@ -160,7 +160,7 @@
   }
 
   &:hover {
-    background: var(--accent);
+    background: var(--primary-color);
     animation-play-state: paused;
 
     img {

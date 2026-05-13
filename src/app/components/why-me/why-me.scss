@@ -1,6 +1,6 @@
 .why-me {
   padding: 5rem 2rem;
-  background: var(--bg-dark);
+  background: var(--background);
 }
 
 .why-me-content {
@@ -41,16 +41,16 @@
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--secondary-color);
   min-width: 18ch;
 
   .highlight {
-    color: var(--accent);
+    color: var(--primary-color);
   }
 
   .cursor {
     display: inline-block;
-    color: var(--accent);
+    color: var(--primary-color);
     animation: blink 0.8s step-end infinite;
   }
 }
@@ -68,7 +68,7 @@
 }
 
 .description {
-  color: var(--text-muted);
+  color: var(--inactive);
   font-size: 0.95rem;
   line-height: 1.8;
 }

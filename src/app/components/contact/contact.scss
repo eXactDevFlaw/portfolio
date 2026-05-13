@@ -1,6 +1,6 @@
 .contact {
   padding: 5rem 2rem;
-  background: var(--bg-dark);
+  background: var(--background);
 }
 
 .contact-header {
@@ -18,7 +18,7 @@
   width: 38px;
   height: 89px;
   border-radius: 19px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(191, 193, 195, 0.3);
   background: transparent;
   cursor: pointer;
   display: flex;
@@ -34,7 +34,7 @@
   }
 
   &:hover {
-    background: var(--accent);
+    background: var(--primary-color);
     img { filter: brightness(0.15); }
   }
 }
@@ -60,7 +60,7 @@
 
 .contact-desc {
   flex: 1;
-  color: var(--text-muted);
+  color: var(--inactive);
   font-size: 0.9rem;
   line-height: 1.8;
 }
@@ -76,7 +76,7 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.9rem;
-  color: var(--text-primary);
+  color: var(--secondary-color);
   white-space: nowrap;
 }
 
@@ -115,23 +115,23 @@
 
   label {
     font-size: 0.8rem;
-    color: var(--accent);
+    color: var(--primary-color);
     padding-left: 0.5rem;
   }
 
   input, textarea {
     background: transparent;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(191, 193, 195, 0.3);
     border-radius: 50px;
     padding: 0.75rem 1.25rem;
-    color: var(--text-primary);
+    color: var(--secondary-color);
     font-family: var(--font-body);
     font-size: 0.9rem;
     width: 100%;
     outline: none;
     transition: border-color var(--transition);
 
-    &:focus { border-color: var(--accent); }
+    &:focus { border-color: var(--primary-color); }
   }
 
   textarea {
@@ -146,14 +146,14 @@
   align-items: flex-start;
   gap: 0.6rem;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--inactive);
   cursor: pointer;
 
   input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; }
 }
 
 .privacy-link {
-  color: var(--accent);
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
@@ -164,18 +164,18 @@
 
 .btn-send {
   background: transparent;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(191, 193, 195, 0.3);
   border-radius: 50px;
   padding: 0.65rem 2rem;
-  color: var(--text-primary);
+  color: var(--secondary-color);
   font-family: var(--font-body);
   font-size: 0.9rem;
   cursor: pointer;
   transition: border-color var(--transition), color var(--transition);
 
   &:hover:not(:disabled) {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
   }
 
   &:disabled {
