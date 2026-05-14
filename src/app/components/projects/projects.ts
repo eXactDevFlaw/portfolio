@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
 interface Project {
   tab: string;
@@ -10,6 +11,7 @@ interface Project {
   liveUrl: string;
   githubUrl: string;
   screenshot?: string;
+  ongoing?: boolean;
 }
 
 @Component({
@@ -19,32 +21,21 @@ interface Project {
   styleUrl: './projects.scss',
 })
 export class ProjectsComponent {
+  ts = inject(TranslationService);
   activeIndex = signal(0);
 
   readonly projects: Project[] = [
     {
-      tab: 'DA Bubble',
-      duration: '3 weeks',
-      about: 'This App is a Slack Clone App. It revolutionises team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organisation.',
-      workProcess: 'How do you keep your code clean and maintainable? You have broken the project down into reusable modules or components? Focus on documentation, naming files, variables, classes and testing.',
-      groupExperience: 'How many people were in the team and what was your role? Describe your tasks in 1-2 sentences, for example: login form, dashboard or chat functionality. What technologies did you use? It is nice to mention good teamwork and cooperation.',
-      technologies: [
-        { name: 'Angular', img: 'img/skill-angular.png' },
-        { name: 'TypeScript', img: 'img/skill-typescript.png' },
-      ],
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
       tab: 'Pollo Loco',
       duration: '6 weeks',
-      about: 'Placeholder description for Pollo Loco. Describe what this project does and what problem it solves.',
-      workProcess: 'How did you organise your work on this project? What patterns or principles did you follow?',
-      groupExperience: 'Describe the team structure and your specific role in the Pollo Loco project.',
+      ongoing: false,
+      about: 'Pollo Loco is a browser based jump and run game built with HTML, CSS, JavaScript and an object oriented architecture. The player controls Pepe, collects coins and bottles, avoids enemies and defeats the final boss.',
+      workProcess: 'I structured the project using modular JavaScript classes and a clean folder architecture. Each part of the game is separated into its own module to keep the code maintainable and scalable.',
+      groupExperience: 'This project deepened my understanding of JavaScript, object oriented programming and game architecture.',
       technologies: [
-        { name: 'JavaScript', img: 'img/skill-javascript.png' },
-        { name: 'HTML', img: 'img/skill-html.png' },
-        { name: 'CSS', img: 'img/skill-css.png' },
+        { name: 'JavaScript', img: 'img/tech-javascript.svg' },
+        { name: 'HTML', img: 'img/tech-html.svg' },
+        { name: 'CSS', img: 'img/tech-css.svg' },
       ],
       liveUrl: 'https://pollo-loco.lutz-boelling.de',
       githubUrl: 'https://github.com/eXactDevFlaw/el-pollo-loco',
@@ -53,30 +44,33 @@ export class ProjectsComponent {
     {
       tab: 'Join',
       duration: '4 weeks',
-      about: 'Placeholder description for Join. Describe what this project does and what problem it solves.',
+      ongoing: false,
+      about: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
       workProcess: 'How did you organise your work on this project? What patterns or principles did you follow?',
-      groupExperience: 'Describe the team structure and your specific role in the Join project.',
+      groupExperience: 'We worked with three people on this project. I was placed as head of the team to orginize the structure and get timelines in place.',
       technologies: [
-        { name: 'JavaScript', img: 'img/skill-javascript.png' },
-        { name: 'HTML', img: 'img/skill-html.png' },
-        { name: 'CSS', img: 'img/skill-css.png' },
+        { name: 'JavaScript', img: 'img/tech-javascript.svg' },
+        { name: 'HTML', img: 'img/tech-html.svg' },
+        { name: 'CSS', img: 'img/tech-css.svg' },
       ],
       liveUrl: 'https://join.lutz-boelling.de',
       githubUrl: 'https://github.com/eXactDevFlaw/join-frontend',
       screenshot: 'img/project-join.png',
     },
     {
-      tab: 'Ongoing Project',
+      tab: 'Poll-App',
       duration: 'In progress',
-      about: 'Placeholder description for your current ongoing project.',
+      ongoing: true,
+      about: 'A polling application currently in development.',
       workProcess: 'Describe how you are organising your work on this project.',
       groupExperience: 'Describe your role and team setup for this project.',
       technologies: [
-        { name: 'Angular', img: 'img/skill-angular.png' },
-        { name: 'TypeScript', img: 'img/skill-typescript.png' },
+        { name: 'Angular', img: 'img/tech-angular.svg' },
+        { name: 'TypeScript', img: 'img/tech-typescritp.svg' },
       ],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://poll-app.lutz-boelling.de',
+      githubUrl: 'https://github.com/eXactDevFlaw/PollApp',
+      screenshot: 'img/project-poll-app.png',
     },
   ];
 

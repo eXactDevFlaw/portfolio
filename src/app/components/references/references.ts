@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
 interface Reference {
   name: string;
@@ -14,6 +15,8 @@ interface Reference {
   styleUrl: './references.scss',
 })
 export class ReferencesComponent {
+  ts = inject(TranslationService);
+
   readonly references: Reference[] = [
     {
       name: 'Sahra Mueller',

@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation.service';
 
-/** Sticky navigation bar with smooth-scroll links, language toggle, and mobile overlay menu. */
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -10,36 +10,33 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.scss',
 })
 export class NavbarComponent {
-  /** Currently active language. */
-  lang = signal<'DE' | 'EN'>('EN');
+  ts = inject(TranslationService);
 
-  /** Whether the mobile overlay menu is open. */
-  mobileOpen = signal(false);
+  mobileOpen = false;
 
-  /** Section labels used to generate nav links and derive scroll target IDs. */
-  navLinks = ['Why me', 'Skills', 'Projects', 'Contact'];
+  get navLinks() {
+    const t = this.ts.t.navbar;
+    return [
+      { label: t.whyme,    id: 'why-me'   },
+      { label: t.skills,   id: 'skills'   },
+      { label: t.projects, id: 'projects' },
+      { label: t.contact,  id: 'contact'  },
+    ];
+  }
 
-  /** Sets the active language. */
   setLang(l: 'DE' | 'EN') {
-    this.lang.set(l);
+    this.ts.setLang(l);
   }
 
-  /** Toggles the mobile menu open/closed. */
   toggleMobile() {
-    this.mobileOpen.update((v) => !v);
+    this.mobileOpen = !this.mobileOpen;
   }
 
-  /** Closes the mobile menu. */
   closeMobile() {
-    this.mobileOpen.set(false);
+    this.mobileOpen = false;
   }
 
-  /**
-   * Smoothly scrolls to the section matching the given label.
-   * Converts the label to a kebab-case ID (e.g. "Why me" → "why-me").
-   */
-  scrollTo(section: string) {
-    const id = section.toLowerCase().replace(' ', '-');
+  scrollTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     this.closeMobile();
   }

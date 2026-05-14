@@ -1,9 +1,5 @@
-import { Component } from '@angular/core';
-
-interface Skill {
-  name: string;
-  img: string;
-}
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-skills',
@@ -12,7 +8,9 @@ interface Skill {
   styleUrl: './skills.scss',
 })
 export class SkillsComponent {
-  readonly skills: Skill[] = [
+  ts = inject(TranslationService);
+
+  readonly skills = [
     { name: 'Angular',         img: 'img/skill-angular.svg' },
     { name: 'TypeScript',      img: 'img/skill-typescript.svg' },
     { name: 'JavaScript',      img: 'img/skill-javascript.svg' },

@@ -1,5 +1,5 @@
 <section class="skills" id="skills">
-  <h2 class="section-title">My Skills</h2>
+  <h2 class="section-title">{{ ts.t.skills.title }}</h2>
 
   <div class="skills-wrapper">
     <!-- Skill grid: @for loopt durch das skills-Array aus skills.ts -->
@@ -13,10 +13,13 @@
 
     <!-- "Currently learning" Bubble -->
     <div class="learning-bubble">
-      <p class="learning-title">I am currently learning</p>
+      <p class="learning-title">{{ ts.t.skills.learning }}</p>
+      <div class="learning-tags">
+        <img src="img/skill-react.svg" alt="React" />
+        <img src="img/skill-vue.svg" alt="Vue.js" />
+      </div>
       <p class="learning-desc">
-        Show that you are motivated to continually improve your skills,
-        implement innovative solutions and stay abreast of new technologies.
+        {{ ts.t.skills.learningDesc }}
       </p>
     </div>
   </div>

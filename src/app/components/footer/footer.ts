@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  standalone: true,
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  ts = inject(TranslationService);
+}

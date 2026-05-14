@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
-/** Landing hero section displaying the profile photo, name, and scroll-down button. */
 @Component({
   selector: 'app-hero',
   standalone: true,
@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './hero.scss'
 })
 export class HeroComponent {
-  /** Smoothly scrolls the page down to the Why Me section. */
+  ts = inject(TranslationService);
+
   scrollDown() {
     document.getElementById('why-me')?.scrollIntoView({ behavior: 'smooth' });
   }

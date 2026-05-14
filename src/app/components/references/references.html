@@ -1,13 +1,15 @@
 <section class="references" id="references">
-  <h2 class="section-title">Need a teamplayer? Here's what my colleagues say about me</h2>
+  <h2 class="section-title">{{ ts.t.references.title }}</h2>
 
   <div class="cards">
     @for (ref of references; track ref.name) {
       <div class="card">
-        <p class="ref-name">{{ ref.name }}</p>
-        <p class="ref-project">Project <span class="accent">{{ ref.project }}</span></p>
-        <p class="ref-quote">{{ ref.quote }}</p>
-        <a [href]="ref.linkedInUrl" target="_blank" class="ref-link">Linked In Profile</a>
+        <div class="card-content">
+          <p class="ref-name">{{ ref.name }}</p>
+          <p class="ref-project">Project <span class="accent">{{ ref.project }}</span></p>
+          <p class="ref-quote">{{ ref.quote }}</p>
+          <a [href]="ref.linkedInUrl" target="_blank" class="ref-link">{{ ts.t.references.linkedin }}</a>
+        </div>
       </div>
     }
   </div>

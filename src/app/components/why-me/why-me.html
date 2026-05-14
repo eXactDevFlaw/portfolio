@@ -1,24 +1,19 @@
 <section class="why-me" id="why-me">
-  <h2 class="section-title">Why me</h2>
+  <h2 class="section-title">{{ ts.t.whyme.title }}</h2>
 
   <div class="why-me-content">
     <div class="stats-block">
       <div class="stat-row">
-        <img class="stat-icon" [src]="currentItem.iconSrc" alt="" />
+        <img class="stat-icon" [src]="currentIcon" alt="" />
         <p class="typewriter">
-          <span class="highlight">I am </span>{{ displayedText() }}<span class="cursor">|</span>
+          <span class="highlight">{{ ts.t.whyme.prefix }}</span>{{ displayedText() }}<span class="cursor">|</span>
         </p>
       </div>
     </div>
 
     <div class="description-block">
-      <p class="description">
-        Why are you passionate about coding?<br />
-        Replace this with your own text about your key traits —
-        analytical thinking, creativity, persistence, and collaboration.
-        A problem-solving mindset is always nice to have.
-      </p>
-      <button class="btn" (click)="scrollToContact()">Let's talk</button>
+      <p class="description">{{ ts.t.whyme.description }}</p>
+      <button class="btn" (click)="scrollToContact()">{{ ts.t.whyme.button }}</button>
     </div>
   </div>
 </section>

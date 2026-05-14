@@ -1,7 +1,7 @@
 <section class="contact" id="contact">
 
   <div class="contact-header">
-    <h2 class="section-title">Contact me</h2>
+    <h2 class="section-title">{{ ts.t.contact.title }}</h2>
     <div class="scroll-top" (click)="scrollToTop()" aria-label="Scroll to top">
       <img src="img/arrow-up.svg" alt="scroll to top" />
     </div>
@@ -10,10 +10,7 @@
   <div class="contact-body">
 
     <div class="contact-info-row">
-      <p class="contact-desc">
-        Feel free to get in touch with job offers or opportunities such as
-        Frontend Developer or Angular Developer roles.
-      </p>
+      <p class="contact-desc">{{ ts.t.contact.desc }}</p>
       <div class="contact-details">
         <div class="contact-item">
           <img src="img/icon-mail.svg" alt="Email" class="contact-icon" />
@@ -30,27 +27,27 @@
 
       <div class="form-row">
         <div class="form-field">
-          <label>Your name</label>
+          <label>{{ ts.t.contact.nameLabel }}</label>
           <input type="text" [(ngModel)]="name" name="name" required />
         </div>
         <div class="form-field">
-          <label>Your Email</label>
+          <label>{{ ts.t.contact.emailLabel }}</label>
           <input type="email" [(ngModel)]="email" name="email" required />
         </div>
       </div>
 
       <div class="form-field">
-        <label>Your Message</label>
+        <label>{{ ts.t.contact.messageLabel }}</label>
         <textarea [(ngModel)]="message" name="message" rows="6" required></textarea>
       </div>
 
       <label class="privacy-label">
         <input type="checkbox" [(ngModel)]="privacyAccepted" name="privacy" />
-        I've read the <a href="#" class="privacy-link">privacy policy</a> and agree to the processing of my data as outlined.
+        {{ ts.t.contact.privacyText }} <a href="#" class="privacy-link">{{ ts.t.contact.privacyLink }}</a> {{ ts.t.contact.privacyEnd }}
       </label>
 
       <div class="form-footer">
-        <button type="submit" class="btn-send" [disabled]="!privacyAccepted">Send</button>
+        <button type="submit" class="btn-send" [disabled]="!privacyAccepted">{{ ts.t.contact.send }}</button>
       </div>
 
     </form>

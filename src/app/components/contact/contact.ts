@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,6 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact.scss',
 })
 export class ContactComponent {
+  ts = inject(TranslationService);
+
   name = '';
   email = '';
   message = '';
@@ -20,7 +23,6 @@ export class ContactComponent {
 
   send() {
     if (!this.privacyAccepted) return;
-    // Hier kommt später die echte Send-Logik rein
     console.log({ name: this.name, email: this.email, message: this.message });
   }
 }

@@ -3,55 +3,69 @@
   background: var(--background);
 }
 
+/* Card wrapper */
+.project-card {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid rgba(191, 193, 195, 0.3);
+  border-radius: var(--radius-card);
+  background: var(--background);
+  overflow: hidden;
+}
+
 /* Tab Navigation */
 .tabs {
   display: flex;
-  max-width: 960px;
-  margin: 0 auto;
+  border-bottom: 1px solid rgba(191, 193, 195, 0.3);
+  padding: 0 1rem;
 }
 
 .tab {
-  flex: 1;
-  padding: 0.9rem 1rem;
+  padding: 1rem 1.2rem;
   background: transparent;
-  border: 1px solid rgba(191, 193, 195, 0.3);
-  border-bottom: none;
-  border-radius: var(--radius-card) var(--radius-card) 0 0;
-  margin-right: -1px; /* verhindert doppelte Borders zwischen Tabs */
+  border: none;
+  border-bottom: 2px solid transparent;
   color: var(--inactive);
   font-family: var(--font-display);
   font-size: clamp(0.65rem, 1.5vw, 0.85rem);
   cursor: pointer;
-  transition: background var(--transition), color var(--transition);
-  position: relative;
-
-  &:last-child {
-    margin-right: 0;
-  }
+  transition: color var(--transition), border-color var(--transition);
 
   &.active {
-    background: var(--background);
     color: var(--primary-color);
-    z-index: 1; /* aktiver Tab liegt über den Borders der Nachbarn */
+    border-bottom-color: var(--primary-color);
   }
 
   &:hover:not(.active) {
-    background: var(--background);
     color: var(--secondary-color);
   }
+
+  &.ongoing {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
+
+.ongoing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #febc2e;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
 }
 
 /* Main content layout */
 .project-content {
   display: flex;
   gap: 3rem;
-  max-width: 960px;
-  margin: 0 auto;
   padding: 2.5rem;
-  background: var(--background);
-  border: 1px solid rgba(191, 193, 195, 0.3);
-  border-top: none;
-  border-radius: 0 0 var(--radius-card) var(--radius-card);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -72,14 +86,11 @@
   align-items: flex-start;
 }
 
-/* Blue dot like in Figma */
 .dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--primary-color);
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 .info-title {
@@ -198,6 +209,7 @@
 .browser-screen {
   display: block;
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
+  object-position: top;
 }

@@ -9,38 +9,38 @@
     </a>
 
     <ul class="nav-links">
-      @for (link of navLinks; track link) {
+      @for (link of navLinks; track link.id) {
         <li>
-          <button (click)="scrollTo(link)">{{ link }}</button>
+          <button (click)="scrollTo(link.id)">{{ link.label }}</button>
         </li>
       }
     </ul>
 
     <div class="nav-right">
       <div class="lang-toggle">
-        <button [class.active]="lang() === 'DE'" (click)="setLang('DE')">DE</button>
-        <button [class.active]="lang() === 'EN'" (click)="setLang('EN')">EN</button>
+        <button [class.active]="ts.lang() === 'DE'" (click)="setLang('DE')">DE</button>
+        <button [class.active]="ts.lang() === 'EN'" (click)="setLang('EN')">EN</button>
       </div>
       <button class="burger" (click)="toggleMobile()" aria-label="Toggle menu">
-        <span [class.open]="mobileOpen()"></span>
-        <span [class.open]="mobileOpen()"></span>
-        <span [class.open]="mobileOpen()"></span>
+        <span [class.open]="mobileOpen"></span>
+        <span [class.open]="mobileOpen"></span>
+        <span [class.open]="mobileOpen"></span>
       </button>
     </div>
   </div>
 </nav>
 
-<div class="mobile-overlay" [class.visible]="mobileOpen()" (click)="closeMobile()">
+<div class="mobile-overlay" [class.visible]="mobileOpen" (click)="closeMobile()">
   <div class="mobile-bubble" (click)="$event.stopPropagation()">
     <ul>
-      @for (link of navLinks; track link) {
+      @for (link of navLinks; track link.id) {
         <li>
-          <button (click)="scrollTo(link)">{{ link }}</button>
+          <button (click)="scrollTo(link.id)">{{ link.label }}</button>
         </li>
       }
       <li class="lang-row">
-        <button [class.active]="lang() === 'DE'" (click)="setLang('DE')">DE</button>
-        <button [class.active]="lang() === 'EN'" (click)="setLang('EN')">EN</button>
+        <button [class.active]="ts.lang() === 'DE'" (click)="setLang('DE')">DE</button>
+        <button [class.active]="ts.lang() === 'EN'" (click)="setLang('EN')">EN</button>
       </li>
     </ul>
   </div>
