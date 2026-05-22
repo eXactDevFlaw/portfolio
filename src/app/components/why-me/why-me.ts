@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, signal, inject, effect } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, inject, effect, untracked } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
 
 type Phase = 'typing' | 'waiting' | 'deleting' | 'switching';
@@ -24,7 +24,7 @@ export class WhyMeComponent implements OnInit, OnDestroy {
   constructor() {
     effect(() => {
       this.ts.lang();
-      this.resetAnimation();
+      untracked(() => this.resetAnimation());
     }, { allowSignalWrites: true });
   }
 
