@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { TranslationService } from '../../services/translation.service';
 
@@ -12,17 +13,25 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class ContactComponent {
   ts = inject(TranslationService);
+  http = inject(HttpClient);
 
   name = '';
   email = '';
   message = '';
   privacyAccepted = false;
   showErrors = false;
+  sending = false;
+  success = false;
+  error = false;
+
+  get isEmailValid(): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.email.trim());
+  }
 
   get isValid(): boolean {
     return (
       this.name.trim().length > 0 &&
-      this.email.trim().length > 0 &&
+      this.isEmailValid &&
       this.message.trim().length > 0 &&
       this.privacyAccepted
     );
@@ -34,7 +43,33 @@ export class ContactComponent {
 
   send() {
     this.showErrors = true;
+    this.error = false;
     if (!this.isValid) return;
-    console.log({ name: this.name, email: this.email, message: this.message });
+
+    this.sending = true;
+    this.http.post('/send-mail.php', {
+      name: this.name,
+      email: this.email,
+      message: this.message,
+    }).subscribe({
+      next: () => {
+        this.sending = false;
+        this.success = true;
+      },
+      error: () => {
+        this.sending = false;
+        this.error = true;
+      },
+    });
+  }
+
+  reset() {
+    this.name = '';
+    this.email = '';
+    this.message = '';
+    this.privacyAccepted = false;
+    this.showErrors = false;
+    this.success = false;
+    this.error = false;
   }
 }

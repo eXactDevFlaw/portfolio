@@ -7,6 +7,15 @@
     </div>
   </div>
 
+  @if (success) {
+    <div class="success-state">
+      <p class="success-title">{{ ts.t.contact.successTitle }}</p>
+      <p class="success-text">{{ ts.t.contact.successText }}</p>
+      <button class="btn-send form-valid" (click)="reset()">↩</button>
+    </div>
+  }
+
+  @if (!success) {
   <div class="contact-body">
 
     <div class="contact-info-row">
@@ -46,18 +55,20 @@
           </div>
         </div>
         <div class="form-field">
-          <label [class.label-error]="showErrors && !email.trim()">
-            {{ showErrors && !email.trim() ? ts.t.contact.emailError : ts.t.contact.emailLabel }}
+          <label [class.label-error]="showErrors && (!email.trim() || !isEmailValid)">
+            {{ showErrors && !email.trim() ? ts.t.contact.emailError :
+               showErrors && !isEmailValid ? ts.t.contact.emailInvalid :
+               ts.t.contact.emailLabel }}
           </label>
           <div class="input-wrap">
             <input
               type="email"
               [(ngModel)]="email"
               name="email"
-              [class.error]="showErrors && !email.trim()"
-              [class.valid]="email.trim()"
+              [class.error]="showErrors && (!email.trim() || !isEmailValid)"
+              [class.valid]="isEmailValid"
             />
-            @if (email.trim()) {
+            @if (isEmailValid) {
               <span class="field-check">✓</span>
             }
           </div>
@@ -99,12 +110,17 @@
       </div>
 
       <div class="form-footer">
-        <button type="submit" class="btn-send" [class.form-valid]="isValid">
-          {{ ts.t.contact.send }}
+        @if (error) {
+          <span class="send-error">{{ ts.t.contact.errorText }}</span>
+        }
+        <button type="submit" class="btn-send" [class.form-valid]="isValid" [disabled]="sending">
+          {{ sending ? ts.t.contact.sending : ts.t.contact.send }}
         </button>
       </div>
 
     </form>
 
   </div>
+  } <!-- /!success -->
+
 </section>

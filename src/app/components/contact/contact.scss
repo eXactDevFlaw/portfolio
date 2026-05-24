@@ -240,7 +240,37 @@
 
 .form-footer {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+  gap: 1rem;
+}
+
+.send-error {
+  font-size: 0.8rem;
+  color: var(--error);
+}
+
+.success-state {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--primary-color);
+}
+
+.success-text {
+  font-size: 0.95rem;
+  color: var(--inactive);
+  line-height: 1.8;
 }
 
 .btn-send {
