@@ -12,14 +12,16 @@
     <div class="contact-info-row">
       <p class="contact-desc">{{ ts.t.contact.desc }}</p>
       <div class="contact-details">
-        <div class="contact-item">
-          <img src="img/icon-mail.svg" alt="Email" class="contact-icon" />
+        <a href="mailto:lutzboelling@gmx.de" class="contact-item">
+          <img src="img/icon-mail.svg" class="contact-icon default" alt="" />
+          <img src="img/icon-mail-hover.svg" class="contact-icon hover" alt="" />
           <span>E-mail: lutzboelling&#64;gmx.de</span>
-        </div>
-        <div class="contact-item">
-          <span class="phone-icon">📞</span>
-          <span>Tel: +49 157 123 456 68</span>
-        </div>
+        </a>
+        <a href="tel:+4915221958743" class="contact-item">
+          <img src="img/icon-phone.svg" class="contact-icon default" alt="" />
+          <img src="img/icon-phone-hover.svg" class="contact-icon hover" alt="" />
+          <span>Tel: +49 152 21958743</span>
+        </a>
       </div>
     </div>
 
@@ -27,27 +29,79 @@
 
       <div class="form-row">
         <div class="form-field">
-          <label>{{ ts.t.contact.nameLabel }}</label>
-          <input type="text" [(ngModel)]="name" name="name" required />
+          <label [class.label-error]="showErrors && !name.trim()">
+            {{ showErrors && !name.trim() ? ts.t.contact.nameError : ts.t.contact.nameLabel }}
+          </label>
+          <div class="input-wrap">
+            <input
+              type="text"
+              [(ngModel)]="name"
+              name="name"
+              [class.error]="showErrors && !name.trim()"
+              [class.valid]="name.trim()"
+            />
+            @if (name.trim()) {
+              <span class="field-check">✓</span>
+            }
+          </div>
         </div>
         <div class="form-field">
-          <label>{{ ts.t.contact.emailLabel }}</label>
-          <input type="email" [(ngModel)]="email" name="email" required />
+          <label [class.label-error]="showErrors && !email.trim()">
+            {{ showErrors && !email.trim() ? ts.t.contact.emailError : ts.t.contact.emailLabel }}
+          </label>
+          <div class="input-wrap">
+            <input
+              type="email"
+              [(ngModel)]="email"
+              name="email"
+              [class.error]="showErrors && !email.trim()"
+              [class.valid]="email.trim()"
+            />
+            @if (email.trim()) {
+              <span class="field-check">✓</span>
+            }
+          </div>
         </div>
       </div>
 
       <div class="form-field">
-        <label>{{ ts.t.contact.messageLabel }}</label>
-        <textarea [(ngModel)]="message" name="message" rows="6" required></textarea>
+        <label [class.label-error]="showErrors && !message.trim()">
+          {{ showErrors && !message.trim() ? ts.t.contact.messageError : ts.t.contact.messageLabel }}
+        </label>
+        <div class="input-wrap">
+          <textarea
+            [(ngModel)]="message"
+            name="message"
+            rows="6"
+            [class.error]="showErrors && !message.trim()"
+            [class.valid]="message.trim()"
+          ></textarea>
+          @if (message.trim()) {
+            <span class="field-check textarea-check">✓</span>
+          }
+        </div>
       </div>
 
-      <label class="privacy-label">
-        <input type="checkbox" [(ngModel)]="privacyAccepted" name="privacy" />
-        {{ ts.t.contact.privacyText }} <a href="#" class="privacy-link">{{ ts.t.contact.privacyLink }}</a> {{ ts.t.contact.privacyEnd }}
-      </label>
+      <div class="privacy-row">
+        <label class="privacy-label">
+          <span class="checkbox-wrap"
+                [class.checked]="privacyAccepted"
+                [class.has-error]="showErrors && !privacyAccepted">
+            <input type="checkbox" [(ngModel)]="privacyAccepted" name="privacy" />
+          </span>
+          {{ ts.t.contact.privacyText }}
+          <a routerLink="/privacy-policy" class="privacy-link">{{ ts.t.contact.privacyLink }}</a>
+          {{ ts.t.contact.privacyEnd }}
+        </label>
+        @if (showErrors && !privacyAccepted) {
+          <p class="privacy-error">{{ ts.t.contact.privacyError }}</p>
+        }
+      </div>
 
       <div class="form-footer">
-        <button type="submit" class="btn-send" [disabled]="!privacyAccepted">{{ ts.t.contact.send }}</button>
+        <button type="submit" class="btn-send" [class.form-valid]="isValid">
+          {{ ts.t.contact.send }}
+        </button>
       </div>
 
     </form>

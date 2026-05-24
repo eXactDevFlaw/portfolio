@@ -1,0 +1,305 @@
+<div class="legal-page">
+
+  <header class="legal-header">
+    <a routerLink="/" class="back-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      {{ ts.lang() === 'DE' ? 'Zurück' : 'Back' }}
+    </a>
+    <img src="img/lb-logo.svg" alt="Lutz Bölling" class="header-logo" />
+  </header>
+
+  <main class="legal-content">
+
+    @if (page === 'privacy') {
+      @if (ts.lang() === 'DE') {
+        <h1>Datenschutzerklärung</h1>
+
+        <section>
+          <h2>1. Verantwortlicher</h2>
+          <p>
+            Lutz Bölling<br />
+            Böttcherei 226<br />
+            28844 Weyhe<br />
+            E-Mail: lutzboelling&#64;gmx.de
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+          <p>
+            Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang erhoben.
+            In keinem Fall werden die erhobenen Daten verkauft oder aus anderen Gründen an Dritte weitergegeben.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Kontaktformular</h2>
+          <p>
+            Wenn Sie das Kontaktformular nutzen, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht)
+            zur Bearbeitung Ihrer Anfrage verarbeitet. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.
+          </p>
+          <p>
+            Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) sowie
+            Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung).
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Speicherdauer</h2>
+          <p>
+            Die im Kontaktformular eingegebenen Daten werden nur so lange gespeichert, wie es für die
+            Bearbeitung Ihrer Anfrage erforderlich ist, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Ihre Rechte</h2>
+          <p>Sie haben das Recht auf:</p>
+          <ul>
+            <li>Auskunft über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
+            <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+            <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+            <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+            <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+            <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          </ul>
+          <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte per E-Mail an: lutzboelling&#64;gmx.de</p>
+        </section>
+
+        <section>
+          <h2>6. Beschwerderecht</h2>
+          <p>
+            Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung
+            Ihrer personenbezogenen Daten zu beschweren. Die zuständige Aufsichtsbehörde für Bremen ist
+            der Landesbeauftragte für Datenschutz und Informationsfreiheit der Freien Hansestadt Bremen.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Hosting</h2>
+          <p>
+            Diese Website wird gehostet bei:<br />
+            Hetzner Online GmbH<br />
+            Industriestr. 25<br />
+            91710 Gunzenhausen<br />
+            <a href="https://www.hetzner.com/de/rechtliches/datenschutz" target="_blank">Datenschutzerklärung Hetzner</a>
+          </p>
+          <p>
+            Der Einsatz von Hetzner erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+            Hetzner verarbeitet Ihre Daten in Deutschland.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Kontaktformular – technische Verarbeitung</h2>
+          <p>
+            Das Kontaktformular dieser Website wird serverseitig über ein PHP-Skript auf dem Hetzner-Server verarbeitet.
+            Die übermittelten Daten (Name, E-Mail-Adresse, Nachricht) werden ausschließlich zur Bearbeitung
+            Ihrer Anfrage verwendet und nicht dauerhaft in einer Datenbank gespeichert.
+            Es werden keine Cookies gesetzt und keine Tracking- oder Analyse-Tools eingesetzt.
+          </p>
+        </section>
+      } @else {
+        <h1>Privacy Policy</h1>
+
+        <section>
+          <h2>1. Responsible Party</h2>
+          <p>
+            Lutz Bölling<br />
+            Böttcherei 226<br />
+            28844 Weyhe, Germany<br />
+            E-Mail: lutzboelling&#64;gmx.de
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Collection and Processing of Personal Data</h2>
+          <p>
+            Personal data on this website is only collected to the technically necessary extent.
+            Under no circumstances will the collected data be sold or passed on to third parties.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Contact Form</h2>
+          <p>
+            When you use the contact form, the data you enter (name, e-mail address, message) will be
+            processed to handle your enquiry. This data will not be passed on without your consent.
+          </p>
+          <p>
+            The legal basis for processing is Art. 6 para. 1 lit. a GDPR (consent) and
+            Art. 6 para. 1 lit. b GDPR (pre-contractual measures).
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Retention Period</h2>
+          <p>
+            The data entered in the contact form will only be stored for as long as necessary to
+            process your enquiry, unless statutory retention obligations exist.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Your Rights</h2>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Access your stored personal data (Art. 15 GDPR)</li>
+            <li>Rectification of incorrect data (Art. 16 GDPR)</li>
+            <li>Erasure of your data (Art. 17 GDPR)</li>
+            <li>Restriction of processing (Art. 18 GDPR)</li>
+            <li>Object to processing (Art. 21 GDPR)</li>
+            <li>Data portability (Art. 20 GDPR)</li>
+          </ul>
+          <p>To exercise your rights, please contact: lutzboelling&#64;gmx.de</p>
+        </section>
+
+        <section>
+          <h2>6. Right to Lodge a Complaint</h2>
+          <p>
+            You have the right to lodge a complaint with a data protection supervisory authority
+            regarding the processing of your personal data.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Hosting</h2>
+          <p>
+            This website is hosted by:<br />
+            Hetzner Online GmbH<br />
+            Industriestr. 25<br />
+            91710 Gunzenhausen, Germany<br />
+            <a href="https://www.hetzner.com/legal/privacy-policy" target="_blank">Hetzner Privacy Policy</a>
+          </p>
+          <p>
+            The use of Hetzner is based on Art. 6 para. 1 lit. f GDPR.
+            Hetzner processes your data in Germany.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Contact Form – Technical Processing</h2>
+          <p>
+            The contact form on this website is processed server-side via a PHP script on the Hetzner server.
+            The submitted data (name, e-mail address, message) is used solely to respond to your enquiry
+            and is not permanently stored in a database.
+            No cookies are set and no tracking or analytics tools are used.
+          </p>
+        </section>
+      }
+    }
+
+    @if (page === 'legal') {
+      @if (ts.lang() === 'DE') {
+        <h1>Impressum</h1>
+
+        <section>
+          <h2>Angaben gemäß § 5 TMG</h2>
+          <p>
+            Lutz Bölling<br />
+            Böttcherei 226<br />
+            28844 Weyhe
+          </p>
+        </section>
+
+        <section>
+          <h2>Kontakt</h2>
+          <p>
+            E-Mail: lutzboelling&#64;gmx.de<br />
+            Tel: +49 152 21958743
+          </p>
+        </section>
+
+        <section>
+          <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+          <p>
+            Lutz Bölling<br />
+            Böttcherei 226<br />
+            28844 Weyhe
+          </p>
+        </section>
+
+        <section>
+          <h2>Haftung für Inhalte</h2>
+          <p>
+            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
+            allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+            verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+          </p>
+        </section>
+
+        <section>
+          <h2>Haftung für Links</h2>
+          <p>
+            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
+            Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+          </p>
+        </section>
+
+        <section>
+          <h2>Urheberrecht</h2>
+          <p>
+            Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+            Urheberrecht. Die Vervielfältigung, Bearbeitung und Verbreitung bedürfen der schriftlichen Zustimmung
+            des jeweiligen Autors.
+          </p>
+        </section>
+      } @else {
+        <h1>Legal Notice</h1>
+
+        <section>
+          <h2>Information according to § 5 TMG</h2>
+          <p>
+            Lutz Bölling<br />
+            Böttcherei 226<br />
+            28844 Weyhe, Germany
+          </p>
+        </section>
+
+        <section>
+          <h2>Contact</h2>
+          <p>
+            E-Mail: lutzboelling&#64;gmx.de<br />
+            Tel: +49 152 21958743
+          </p>
+        </section>
+
+        <section>
+          <h2>Responsible for Content according to § 55 para. 2 RStV</h2>
+          <p>
+            Lutz Bölling<br />
+            Böttcherei 226<br />
+            28844 Weyhe, Germany
+          </p>
+        </section>
+
+        <section>
+          <h2>Liability for Content</h2>
+          <p>
+            As a service provider, we are responsible for our own content on these pages in accordance with
+            general laws. However, we are not obligated to monitor transmitted or stored third-party information.
+          </p>
+        </section>
+
+        <section>
+          <h2>Liability for Links</h2>
+          <p>
+            Our website contains links to external third-party websites, over whose content we have no influence.
+            The respective provider or operator of the linked pages is always responsible for their content.
+          </p>
+        </section>
+
+        <section>
+          <h2>Copyright</h2>
+          <p>
+            The content and works created by the site operator on these pages are subject to German copyright law.
+            Reproduction, editing, and distribution require the written consent of the respective author.
+          </p>
+        </section>
+      }
+    }
+
+  </main>
+</div>
