@@ -15,8 +15,15 @@
   gap: 2rem;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 1.5rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 1rem 1rem 1.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
   }
 }
 
@@ -37,6 +44,8 @@
   @media (max-width: 768px) {
     width: 280px;
     height: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
   }
 }
 
@@ -51,6 +60,10 @@
   height: 100%;
   padding: 4rem;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    padding: 2.5rem;
+  }
 }
 
 .ref-name {

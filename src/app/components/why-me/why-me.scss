@@ -44,6 +44,11 @@
   color: var(--secondary-color);
   min-width: 18ch;
 
+  @media (max-width: 768px) {
+    min-width: unset;
+    font-size: clamp(1rem, 5vw, 1.3rem);
+  }
+
   .highlight {
     color: var(--primary-color);
   }

@@ -21,6 +21,11 @@
   grid-template-columns: repeat(4, auto);
   gap: 2rem 2.5rem;
   flex: 1;
+
+  @media (max-width: 768px) {
+    gap: 1rem 1.5rem;
+    justify-content: center;
+  }
 }
 
 .skill-item img {
@@ -32,6 +37,11 @@
   &:hover {
     transform: translateY(-8px);
     filter: brightness(1.4) drop-shadow(0 0 10px var(--primary-color));
+  }
+
+  @media (max-width: 768px) {
+    width: 52px;
+    height: 76px;
   }
 }
 

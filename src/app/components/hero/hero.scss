@@ -1,18 +1,26 @@
 .hero {
   position: relative;
-  min-height: 480px;
+  height: calc(100vh - var(--navbar-h));
   background: var(--background);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 2rem 2rem 0;
+  padding: 0 2rem;
   overflow: visible;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 2rem 1.5rem;
+  }
 }
 
 .social-icons {
   position: absolute;
   top: 2rem;
   right: 2.5rem;
+
+  @media (max-width: 768px) { display: none; }
+
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -50,9 +58,9 @@
 
 .hero-content {
   display: flex;
-  align-items: flex-end;
-  gap: 4rem;
-  max-width: 900px;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
   margin: 0 auto;
   width: 100%;
 
@@ -61,18 +69,19 @@
     align-items: center;
     gap: 1rem;
     text-align: center;
+    padding-top: 2rem;
   }
 }
 
 .photo-wrapper {
   position: relative;
-  width: 340px;
-  height: 500px;
+  width: clamp(300px, 32vw, 480px);
+  height: clamp(450px, 82vh, 900px);
   flex-shrink: 0;
 
   @media (max-width: 768px) {
-    width: 220px;
-    height: 320px;
+    width: 260px;
+    height: 370px;
   }
 }
 
@@ -81,10 +90,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 360px;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background: var(--primary-color);
+  height: 72%;
   border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+  background: var(--primary-color);
   animation: blob-rotate 8s linear infinite;
 
   @media (max-width: 768px) {
@@ -93,12 +101,8 @@
 }
 
 @keyframes blob-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .photo-img {
@@ -109,7 +113,7 @@
   height: 100%;
   width: auto;
   object-fit: contain;
-  object-position: bottom;
+  object-position: bottom center;
 }
 
 .hero-text {
@@ -117,7 +121,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 
   @media (max-width: 768px) {
     align-items: center;

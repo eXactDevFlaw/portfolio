@@ -38,15 +38,16 @@
 
       <div class="form-row">
         <div class="form-field">
-          <label [class.label-error]="showErrors && !name.trim()">
-            {{ showErrors && !name.trim() ? ts.t.contact.nameError : ts.t.contact.nameLabel }}
+          <label [class.label-error]="showNameError">
+            {{ showNameError ? ts.t.contact.nameError : ts.t.contact.nameLabel }}
           </label>
           <div class="input-wrap">
             <input
               type="text"
               [(ngModel)]="name"
               name="name"
-              [class.error]="showErrors && !name.trim()"
+              (blur)="nameTouched = true"
+              [class.error]="showNameError"
               [class.valid]="name.trim()"
             />
             @if (name.trim()) {
@@ -55,9 +56,9 @@
           </div>
         </div>
         <div class="form-field">
-          <label [class.label-error]="showErrors && (!email.trim() || !isEmailValid)">
-            {{ showErrors && !email.trim() ? ts.t.contact.emailError :
-               showErrors && !isEmailValid ? ts.t.contact.emailInvalid :
+          <label [class.label-error]="showEmailError || showEmailInvalid">
+            {{ showEmailError ? ts.t.contact.emailError :
+               showEmailInvalid ? ts.t.contact.emailInvalid :
                ts.t.contact.emailLabel }}
           </label>
           <div class="input-wrap">
@@ -65,7 +66,8 @@
               type="email"
               [(ngModel)]="email"
               name="email"
-              [class.error]="showErrors && (!email.trim() || !isEmailValid)"
+              (blur)="emailTouched = true"
+              [class.error]="showEmailError || showEmailInvalid"
               [class.valid]="isEmailValid"
             />
             @if (isEmailValid) {
@@ -76,15 +78,16 @@
       </div>
 
       <div class="form-field">
-        <label [class.label-error]="showErrors && !message.trim()">
-          {{ showErrors && !message.trim() ? ts.t.contact.messageError : ts.t.contact.messageLabel }}
+        <label [class.label-error]="showMessageError">
+          {{ showMessageError ? ts.t.contact.messageError : ts.t.contact.messageLabel }}
         </label>
         <div class="input-wrap">
           <textarea
             [(ngModel)]="message"
             name="message"
             rows="6"
-            [class.error]="showErrors && !message.trim()"
+            (blur)="messageTouched = true"
+            [class.error]="showMessageError"
             [class.valid]="message.trim()"
           ></textarea>
           @if (message.trim()) {
@@ -113,7 +116,7 @@
         @if (error) {
           <span class="send-error">{{ ts.t.contact.errorText }}</span>
         }
-        <button type="submit" class="btn-send" [class.form-valid]="isValid" [disabled]="sending">
+        <button type="submit" class="btn-send" [class.form-valid]="isValid" [disabled]="!isValid || sending">
           {{ sending ? ts.t.contact.sending : ts.t.contact.send }}
         </button>
       </div>

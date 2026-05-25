@@ -24,6 +24,26 @@ export class ContactComponent {
   success = false;
   error = false;
 
+  nameTouched = false;
+  emailTouched = false;
+  messageTouched = false;
+
+  get showNameError(): boolean {
+    return (this.nameTouched || this.showErrors) && !this.name.trim();
+  }
+
+  get showEmailError(): boolean {
+    return (this.emailTouched || this.showErrors) && !this.email.trim();
+  }
+
+  get showEmailInvalid(): boolean {
+    return (this.emailTouched || this.showErrors) && !!this.email.trim() && !this.isEmailValid;
+  }
+
+  get showMessageError(): boolean {
+    return (this.messageTouched || this.showErrors) && !this.message.trim();
+  }
+
   get isEmailValid(): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.email.trim());
   }
@@ -71,5 +91,8 @@ export class ContactComponent {
     this.showErrors = false;
     this.success = false;
     this.error = false;
+    this.nameTouched = false;
+    this.emailTouched = false;
+    this.messageTouched = false;
   }
 }

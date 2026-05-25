@@ -8,6 +8,7 @@
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1rem;
+    padding: 1.5rem;
     text-align: center;
   }
 }
@@ -18,12 +19,23 @@
   gap: 0.2rem;
   font-size: 0.85rem;
   color: var(--background);
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    gap: 1.5rem;
+    order: 3;
+    align-items: center;
+  }
 }
 
 .legal-link {
   color: var(--background);
   text-decoration: underline;
   &:hover { color: var(--background); }
+}
+
+.footer-center {
+  @media (max-width: 768px) { order: 1; }
 }
 
 .footer-logo {
@@ -34,6 +46,8 @@
 .footer-right {
   display: flex;
   gap: 0.75rem;
+
+  @media (max-width: 768px) { order: 2; }
 
   a {
     width: 32px;

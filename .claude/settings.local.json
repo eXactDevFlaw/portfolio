@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"c:\\\\Dev\\\\eXactDevFlaw\\\\portfolio-da\\\\portfolio\\\\\")",
+      "Read(//c/Dev/eXactDevFlaw/portfolio-da/**)",
+      "Bash(Get-Content src\\\\app\\\\components\\\\hero\\\\hero.scss -Encoding UTF8)",
+      "Bash(Select-String \"@media\")"
+    ]
+  }
+}
