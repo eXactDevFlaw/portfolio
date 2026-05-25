@@ -41,6 +41,10 @@
     background: var(--primary-color);
     img { filter: brightness(0.15); }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .contact-body {
@@ -251,6 +255,10 @@
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .send-error {

@@ -171,6 +171,14 @@
       filter: brightness(0.15);
     }
   }
+
+  @media (max-width: 768px) {
+    margin-top: 0.5rem;
+    width: 28px;
+    height: 66px;
+    border-radius: 14px;
+    img { width: 28px; height: 66px; }
+  }
 }
 
 @keyframes bounce {

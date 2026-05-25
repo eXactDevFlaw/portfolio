@@ -1,6 +1,10 @@
 .skills {
   padding: 5rem 2rem;
   background: var(--background);
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
 }
 
 .skills-wrapper {
@@ -64,6 +68,12 @@
 
   &:hover {
     background-image: url('/img/ellipse-hover.svg');
+  }
+
+  @media (max-width: 768px) {
+    width: 210px;
+    height: 210px;
+    padding: 1.5rem;
   }
 }
 

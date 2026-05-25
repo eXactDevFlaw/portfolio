@@ -20,6 +20,7 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 .claude/
+/public/send-mail.php
 
 # Visual Studio Code
 .vscode/*
@@ -40,6 +41,9 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+
+# Environment
+.env
 
 # System files
 .DS_Store

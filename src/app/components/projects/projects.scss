@@ -18,6 +18,14 @@
   display: flex;
   border-bottom: 1px solid rgba(191, 193, 195, 0.3);
   padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    overflow-x: auto;
+    padding: 0 0.5rem;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
 }
 
 .tab {
@@ -30,6 +38,7 @@
   font-size: clamp(0.65rem, 1.5vw, 0.85rem);
   cursor: pointer;
   transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
 
   &.active {
     color: var(--primary-color);
@@ -136,6 +145,10 @@
   font-size: 0.8rem;
   color: var(--inactive);
   text-align: right;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 
 .tech-icons {
@@ -143,6 +156,10 @@
   gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .tech-icon {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
@@ -14,6 +14,7 @@ import { TranslationService } from '../../services/translation.service';
 export class ContactComponent {
   ts = inject(TranslationService);
   http = inject(HttpClient);
+  cdr = inject(ChangeDetectorRef);
 
   name = '';
   email = '';
@@ -75,10 +76,12 @@ export class ContactComponent {
       next: () => {
         this.sending = false;
         this.success = true;
+        this.cdr.detectChanges();
       },
       error: () => {
         this.sending = false;
         this.error = true;
+        this.cdr.detectChanges();
       },
     });
   }
