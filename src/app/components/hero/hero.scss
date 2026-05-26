@@ -9,6 +9,7 @@
   overflow: visible;
 
   @media (max-width: 768px) {
+    margin-top: var(--navbar-h);
     align-items: center;
     padding: 2rem 1.5rem;
   }
@@ -18,12 +19,11 @@
   position: absolute;
   top: 2rem;
   right: 2.5rem;
-
-  @media (max-width: 768px) { display: none; }
-
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  @media (max-width: 768px) { display: none; }
   img.default {
     display: block;
   }
@@ -80,8 +80,9 @@
   flex-shrink: 0;
 
   @media (max-width: 768px) {
-    width: 260px;
-    height: 370px;
+    width: 320px;
+    height: 420px;
+    overflow: hidden;
   }
 }
 
@@ -96,7 +97,13 @@
   animation: blob-rotate 8s linear infinite;
 
   @media (max-width: 768px) {
-    height: 230px;
+    width: 310px;
+    height: 310px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation: none;
   }
 }
 
@@ -114,6 +121,7 @@
   width: auto;
   object-fit: contain;
   object-position: bottom center;
+
 }
 
 .hero-text {
