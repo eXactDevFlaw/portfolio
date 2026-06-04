@@ -5,8 +5,9 @@
   background: var(--primary-color);
 
   @media (max-width: 768px) {
-    position: fixed;
+    position: absolute;
     width: 100%;
+    background: transparent;
   }
 
   .nav-inner {
@@ -32,6 +33,10 @@
   color: var(--background);
   flex-shrink: 0;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    color: var(--secondary-color);
+  }
 
   img {
     height: 50px;
@@ -148,6 +153,10 @@
     background: var(--background);
     border-radius: 2px;
     transition: opacity 0.2s;
+
+    @media (max-width: 768px) {
+      background: var(--secondary-color);
+    }
   }
 
   /* open: hide lines, show clean × via pseudo-elements */
@@ -166,6 +175,10 @@
     top: 50%;
     left: 50%;
     transition: transform 0.3s;
+
+    @media (max-width: 768px) {
+      background: var(--secondary-color);
+    }
   }
 
   &:has(span.open)::before {
