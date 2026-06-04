@@ -6,8 +6,8 @@
       <div class="card">
         <div class="card-content">
           <p class="ref-name">{{ ref.name }}</p>
-          <p class="ref-project">Project <span class="accent">{{ ref.project }}</span></p>
-          <p class="ref-quote">{{ ref.quote }}</p>
+          <p class="ref-project">{{ ts.t.references.projectLabel }} <span class="accent">{{ ref.project }}</span></p>
+          <p class="ref-quote">{{ ref.quote[ts.lang()] }}</p>
           <a [href]="ref.linkedInUrl" target="_blank" class="ref-link">{{ ts.t.references.linkedin }}</a>
         </div>
       </div>

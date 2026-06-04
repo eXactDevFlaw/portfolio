@@ -4,7 +4,7 @@ import { TranslationService } from '../../services/translation.service';
 interface Reference {
   name: string;
   project: string;
-  quote: string;
+  quote: { EN: string; DE: string };
   linkedInUrl: string;
 }
 
@@ -19,22 +19,22 @@ export class ReferencesComponent {
 
   readonly references: Reference[] = [
     {
-      name: 'Sahra Mueller',
-      project: 'DA Bubble',
-      quote: '"Lutz had to develop, format and deliver content in collaboration with the team members. He is a reliable and friendly person."',
-      linkedInUrl: '#',
+      name: 'Christian Klemm',
+      project: 'Join - Kanbanboard',
+      quote: {
+        EN: '"Thanks to Lutz. He carried us through the project"',
+        DE: '"Danke an Lutz. Er hat uns durch das Projekt mit durchgezogen"',
+      },
+      linkedInUrl: 'https://www.linkedin.com/in/christian-klemm-650071b5/',
     },
     {
-      name: 'James Rugman',
-      project: 'Join',
-      quote: '"Lutz is a reliable and friendly person. Works in a structured way and writes a clear code. I recommend him as a colleague."',
-      linkedInUrl: '#',
-    },
-    {
-      name: 'Evelyn Marx',
-      project: 'Sharkie',
-      quote: '"He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code."',
-      linkedInUrl: '#',
+      name: 'Lars Tieseler',
+      project: 'Join - Kanbanboard',
+      quote: {
+        EN: '"Lutz guided us well through the project. He will make his way, I am sure of it!"',
+        DE: '"Lutz hat uns gut durch das Projekt geführt. Er wird seinen weg gehen, da bin ich mir sicher!"',
+      },
+      linkedInUrl: 'https://www.linkedin.com/in/lars-tieseler-50922b261/',
     },
   ];
 }

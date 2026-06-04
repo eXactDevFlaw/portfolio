@@ -29,6 +29,7 @@ const EN = {
   references: {
     title: "Need a teamplayer? Here's what my colleagues say about me",
     linkedin: 'LinkedIn Profile',
+    projectLabel: 'Project',
   },
   contact: {
     title: 'Contact me',
@@ -80,8 +81,9 @@ const DE = {
     comingSoon: 'Screenshot folgt',
   },
   references: {
-    title: 'Teamplayer gesucht? Das sagen meine Kollegen über mich',
+    title: 'Teamplayer gesucht? Das sagen meine Kollegen über mich!',
     linkedin: 'LinkedIn Profil',
+    projectLabel: 'Projekt',
   },
   contact: {
     title: 'Kontakt',
