@@ -39,7 +39,9 @@
 
   &:hover {
     background: var(--primary-color);
-    img { filter: brightness(0.15); }
+    img {
+      filter: brightness(0.15);
+    }
   }
 
   @media (max-width: 768px) {
@@ -92,12 +94,18 @@
     white-space: normal;
   }
 
-  .contact-icon.hover { display: none; }
+  .contact-icon.hover {
+    display: none;
+  }
 
   &:hover {
     color: var(--primary-color);
-    .contact-icon.default { display: none; }
-    .contact-icon.hover { display: block; }
+    .contact-icon.default {
+      display: none;
+    }
+    .contact-icon.hover {
+      display: block;
+    }
   }
 }
 
@@ -117,7 +125,9 @@
   display: flex;
   gap: 1.5rem;
 
-  .form-field { flex: 1; }
+  .form-field {
+    flex: 1;
+  }
 
   @media (max-width: 500px) {
     flex-direction: column;
@@ -135,14 +145,17 @@
     padding-left: 0.5rem;
     transition: color var(--transition);
 
-    &.label-error { color: var(--error); }
+    &.label-error {
+      color: var(--error);
+    }
   }
 }
 
 .input-wrap {
   position: relative;
 
-  input, textarea {
+  input,
+  textarea {
     background: transparent;
     border: 1px solid rgba(191, 193, 195, 0.3);
     border-radius: 50px;
@@ -152,15 +165,21 @@
     font-size: 0.9rem;
     width: 100%;
     outline: none;
-    transition: border-color var(--transition), background var(--transition);
+    transition:
+      border-color var(--transition),
+      background var(--transition);
 
     &:focus {
       border-color: var(--primary-color);
       background: rgba(151, 186, 217, 0.06);
     }
 
-    &.error { border-color: var(--error); }
-    &.valid { padding-right: 2.5rem; }
+    &.error {
+      border-color: var(--error);
+    }
+    &.valid {
+      padding-right: 2.5rem;
+    }
   }
 
   textarea {
@@ -189,6 +208,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+
+  @media (max-width: 768px) {
+    flex-direction: row;;
+  }
 }
 
 .privacy-label {
@@ -198,6 +221,12 @@
   font-size: 0.8rem;
   color: var(--inactive);
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+    flex-direction: row;
+    text-align: center;
+  }
 }
 
 .checkbox-wrap {
@@ -207,7 +236,7 @@
   flex-shrink: 0;
   margin-top: 1px;
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -241,7 +270,6 @@
 
 .privacy-link {
   color: var(--primary-color);
-  text-decoration: underline;
 }
 
 .privacy-error {
@@ -299,7 +327,10 @@
   font-size: 0.9rem;
   cursor: not-allowed;
   opacity: 0.45;
-  transition: border-color var(--transition), color var(--transition), opacity var(--transition);
+  transition:
+    border-color var(--transition),
+    color var(--transition),
+    opacity var(--transition);
 
   &.form-valid {
     border-color: rgba(191, 193, 195, 0.7);
