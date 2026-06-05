@@ -2,21 +2,26 @@
   <h2 class="section-title">{{ ts.t.skills.title }}</h2>
 
   <div class="skills-wrapper">
-    <!-- Skill grid: @for loopt durch das skills-Array aus skills.ts -->
     <div class="skills-grid">
       @for (skill of skills; track skill.name) {
         <div class="skill-item">
-          <img [src]="skill.img" [alt]="skill.name" />
+          <img [src]="skill.img"/>
+          <span class="skill-name">{{ skill.name }}</span>
         </div>
       }
     </div>
 
-    <!-- "Currently learning" Bubble -->
     <div class="learning-bubble">
       <p class="learning-title">{{ ts.t.skills.learning }}</p>
       <div class="learning-tags">
-        <img src="img/skill-react.svg" alt="React" />
-        <img src="img/skill-vue.svg" alt="Vue.js" />
+        <div class="learning-tag-item">
+          <img src="img/skill-react.svg" alt="React" />
+          <span>React</span>
+        </div>
+        <div class="learning-tag-item">
+          <img src="img/skill-vue.svg" alt="Vue.js" />
+          <span>Vue.js</span>
+        </div>
       </div>
       <p class="learning-desc">
         {{ ts.t.skills.learningDesc }}

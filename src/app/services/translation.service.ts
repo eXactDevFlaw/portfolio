@@ -112,10 +112,11 @@ export type Translations = typeof EN;
 
 @Injectable({ providedIn: 'root' })
 export class TranslationService {
-  lang = signal<'DE' | 'EN'>('EN');
+  lang = signal<'DE' | 'EN'>((localStorage.getItem('lang') as 'DE' | 'EN') ?? 'EN');
 
-  setLang(l: 'DE' | 'EN') {
-    this.lang.set(l);
+  setLang(language: 'DE' | 'EN') {
+    localStorage.setItem('lang', language);
+    this.lang.set(language);
   }
 
   get t(): Translations {
