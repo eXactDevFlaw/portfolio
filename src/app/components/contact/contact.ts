@@ -29,8 +29,20 @@ export class ContactComponent {
   emailTouched = false;
   messageTouched = false;
 
+  get isNameValid(): boolean {
+    return this.name.trim().length >= 3;
+  }
+
+  get isMessageValid(): boolean {
+    return this.message.trim().length >= 20;
+  }
+
+  get isEmailValid(): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.email.trim());
+  }
+
   get showNameError(): boolean {
-    return (this.nameTouched || this.showErrors) && !this.name.trim();
+    return (this.nameTouched || this.showErrors) && !this.isNameValid;
   }
 
   get showEmailError(): boolean {
@@ -42,20 +54,27 @@ export class ContactComponent {
   }
 
   get showMessageError(): boolean {
-    return (this.messageTouched || this.showErrors) && !this.message.trim();
+    return (this.messageTouched || this.showErrors) && !this.isMessageValid;
   }
 
-  get isEmailValid(): boolean {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.email.trim());
+  get nameErrorMsg(): string {
+    return this.name.trim().length === 0
+      ? this.ts.t.contact.nameError
+      : this.ts.t.contact.nameTooShort;
+  }
+
+  get messageErrorMsg(): string {
+    return this.message.trim().length === 0
+      ? this.ts.t.contact.messageError
+      : this.ts.t.contact.messageTooShort;
+  }
+
+  get showPrivacyHint(): boolean {
+    return this.isNameValid && this.isEmailValid && this.isMessageValid && !this.privacyAccepted;
   }
 
   get isValid(): boolean {
-    return (
-      this.name.trim().length > 0 &&
-      this.isEmailValid &&
-      this.message.trim().length > 0 &&
-      this.privacyAccepted
-    );
+    return this.isNameValid && this.isEmailValid && this.isMessageValid && this.privacyAccepted;
   }
 
   scrollToTop() {

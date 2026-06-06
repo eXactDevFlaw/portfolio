@@ -1,6 +1,10 @@
 .projects {
   padding: 5rem 2rem;
   background: var(--background);
+
+  @media (max-width: 768px){
+    padding: 3rem 0.5rem;
+  }
 }
 
 /* Card wrapper */
@@ -73,11 +77,15 @@
 /* Main content layout */
 .project-content {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   padding: 2.5rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 1.25rem;
+    gap: 1.5rem;
   }
 }
 
@@ -122,12 +130,6 @@
   line-height: 1.7;
 }
 
-.project-btns {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
 /* Right: visual */
 .project-visual {
   display: flex;
@@ -138,6 +140,7 @@
 
   @media (max-width: 768px) {
     width: 100%;
+    order: -1;
   }
 }
 
@@ -172,6 +175,11 @@
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
+  flex-basis: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .screenshot-placeholder {

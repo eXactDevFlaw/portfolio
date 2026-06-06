@@ -39,7 +39,7 @@
       <div class="form-row">
         <div class="form-field">
           <label [class.label-error]="showNameError">
-            {{ showNameError ? ts.t.contact.nameError : ts.t.contact.nameLabel }}
+            {{ showNameError ? nameErrorMsg : ts.t.contact.nameLabel }}
           </label>
           <div class="input-wrap">
             <input
@@ -48,9 +48,9 @@
               name="name"
               (blur)="nameTouched = true"
               [class.error]="showNameError"
-              [class.valid]="name.trim()"
+              [class.valid]="isNameValid"
             />
-            @if (name.trim()) {
+            @if (isNameValid) {
               <span class="field-check">✓</span>
             }
           </div>
@@ -79,7 +79,7 @@
 
       <div class="form-field">
         <label [class.label-error]="showMessageError">
-          {{ showMessageError ? ts.t.contact.messageError : ts.t.contact.messageLabel }}
+          {{ showMessageError ? messageErrorMsg : ts.t.contact.messageLabel }}
         </label>
         <div class="input-wrap">
           <textarea
@@ -88,9 +88,9 @@
             rows="6"
             (blur)="messageTouched = true"
             [class.error]="showMessageError"
-            [class.valid]="message.trim()"
+            [class.valid]="isMessageValid"
           ></textarea>
-          @if (message.trim()) {
+          @if (isMessageValid) {
             <span class="field-check textarea-check">✓</span>
           }
         </div>
@@ -100,14 +100,12 @@
         <label class="privacy-label">
           <span class="checkbox-wrap"
                 [class.checked]="privacyAccepted"
-                [class.has-error]="showErrors && !privacyAccepted">
+                [class.has-error]="(showErrors || showPrivacyHint) && !privacyAccepted">
             <input type="checkbox" [(ngModel)]="privacyAccepted" name="privacy" />
           </span>
-          {{ ts.t.contact.privacyText }}
-          <a routerLink="/privacy-policy" class="privacy-link">{{ ts.t.contact.privacyLink }}</a>
-          {{ ts.t.contact.privacyEnd }}
+          <span>{{ ts.t.contact.privacyText }} <a routerLink="/privacy-policy" class="privacy-link">{{ ts.t.contact.privacyLink }}</a> {{ ts.t.contact.privacyEnd }}</span>
         </label>
-        @if (showErrors && !privacyAccepted) {
+        @if ((showErrors || showPrivacyHint) && !privacyAccepted) {
           <p class="privacy-error">{{ ts.t.contact.privacyError }}</p>
         }
       </div>

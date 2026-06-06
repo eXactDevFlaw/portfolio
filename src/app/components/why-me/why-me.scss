@@ -1,6 +1,10 @@
 .why-me {
   padding: 5rem 2rem;
   background: var(--background);
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
 }
 
 .why-me-content {

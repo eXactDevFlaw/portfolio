@@ -214,8 +214,8 @@
 }
 
 .mobile-bubble {
-  width: 354px;
-  height: 370px;
+  width: min(354px, 90vw);
+  height: min(370px, 90vw);
   background: url('/img/menu-ellipse.svg') center / 100% 100% no-repeat;
   display: flex;
   align-items: center;

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class NavbarComponent {
   ts = inject(TranslationService);
+  router = inject(Router);
 
   mobileOpen = false;
 
@@ -30,14 +32,20 @@ export class NavbarComponent {
 
   toggleMobile() {
     this.mobileOpen = !this.mobileOpen;
+    document.body.classList.toggle('menu-open', this.mobileOpen);
   }
 
   closeMobile() {
     this.mobileOpen = false;
+    document.body.classList.remove('menu-open');
   }
 
   scrollTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     this.closeMobile();
+    if (this.router.url === '/') {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/'], { fragment: id });
+    }
   }
 }

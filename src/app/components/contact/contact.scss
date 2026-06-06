@@ -68,6 +68,12 @@
   }
 }
 
+.contact-details {
+  @media (max-width: 768px) {
+    order: -1;
+  }
+}
+
 .contact-desc {
   flex: 1;
   color: var(--inactive);
@@ -208,10 +214,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-
-  @media (max-width: 768px) {
-    flex-direction: row;;
-  }
 }
 
 .privacy-label {
@@ -221,12 +223,6 @@
   font-size: 0.8rem;
   color: var(--inactive);
   cursor: pointer;
-
-  @media (max-width: 768px) {
-    display: block;
-    flex-direction: row;
-    text-align: center;
-  }
 }
 
 .checkbox-wrap {

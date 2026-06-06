@@ -26,8 +26,13 @@
   flex: 1;
 
   @media (max-width: 768px) {
-    gap: 1rem 1.5rem;
-    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem 0.75rem;
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -60,6 +65,12 @@
   color: var(--primary-color);
   text-align: center;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 1rem;
+  }
 }
 
 .learning-bubble {
@@ -83,9 +94,12 @@
   }
 
   @media (max-width: 768px) {
-    width: 280px;
-    height: 280px;
-    padding: 2rem;
+    width: 100%;
+    height: auto;
+    background-image: none;
+    border: 1px solid rgba(191, 193, 195, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
   }
 }
 

@@ -5,38 +5,6 @@
   font-family: var(--font-body);
 }
 
-.legal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 3rem;
-  background: var(--primary-color);
-
-  @media (max-width: 600px) {
-    padding: 1rem 1.5rem;
-  }
-}
-
-.back-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--background);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity var(--transition);
-
-  &:hover { opacity: 0.7; }
-}
-
-.header-logo {
-  height: 48px;
-  width: auto;
-}
-
 .legal-content {
   max-width: 780px;
   margin: 0 auto;
