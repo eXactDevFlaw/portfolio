@@ -79,8 +79,8 @@
 
 .photo-wrapper {
   position: relative;
-  width: clamp(300px, 32vw, 480px);
-  height: clamp(450px, 82vh, 900px);
+  width: clamp(300px, 40vw, 600px);
+  height: calc(100vh - var(--navbar-h));
   flex-shrink: 0;
 
   @media (max-width: 768px) {
@@ -94,27 +94,29 @@
 }
 
 .photo-bg {
-  display: inline;
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  height: 72%;
-  border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
-  background: var(--primary-color);
-  animation: blob-rotate 8s linear infinite;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  transition: opacity var(--transition);
+
+  &.photo-bg-hover {
+    opacity: 0;
+  }
 
   @media (max-width: 768px) {
     display: none;
   }
 }
 
-@keyframes blob-rotate {
-  from {
-    transform: rotate(0deg);
+.photo-wrapper:hover {
+  .photo-bg:not(.photo-bg-hover) {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  .photo-bg-hover {
+    opacity: 1;
   }
 }
 
@@ -124,7 +126,7 @@
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
-  width: auto;
+  width: 100vw;
   object-fit: contain;
   object-position: bottom center;
 
