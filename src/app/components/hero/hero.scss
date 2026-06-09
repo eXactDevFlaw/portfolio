@@ -99,7 +99,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 120%;
-  height: auto;
+  height: 100%;
   transition: opacity var(--transition);
 
   &.photo-bg-hover {
@@ -126,7 +126,7 @@
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
-  width: 100vw;
+  width: 100vh;
   object-fit: contain;
   object-position: bottom center;
 
